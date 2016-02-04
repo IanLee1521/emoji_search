@@ -43,6 +43,10 @@ You will need a Slack API key. You can get this from the [Slack website](https:/
 
     echo "API_TOKEN = '<MY-API-TOKEN>'" > api_token.py
 
+Alternatively, you can specify the API key on the commandline with:
+
+    ~/emoji_search/emoji_search.py --api-token=<MY-API-TOKEN> ...
+
 If you did not make the script executable in the optional step above use `python ~/emoji_search/emoji_search.py` in place of `~/emoji_search/emoji_search.py` below:
 
 To query for messages reacted to with the :evergreen_tree: emoji between Nov 2, 2015 and Oct 31, 2015 and write the output to a file called evergreen.txt in the current directory, run:
