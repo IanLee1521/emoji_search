@@ -10,8 +10,7 @@ import time
 try:
     from api_token import API_TOKEN
 except ImportError:
-    print('Please store API_TOKEN in api_token.py')
-    sys.exit(1)
+    API_TOKEN = None
 
 MESSAGE_ENDPOINT = 'https://slack.com/api/search.messages'
 USER_ENDPOINT = 'https://slack.com/api/users.info'
@@ -83,7 +82,14 @@ def format_text(text):
               'MM-DD-YYYY format.'), default='01-01-1999')
 @click.option('--enddate', help=('Date to end search. Must be in '
               'MM-DD-YYYY format.'), default='12-12-2222')
-def get_messages(emoji, outfile, startdate, enddate):
+@click.option('--api-token',
+              help=('API Token for querying Slack'),
+              default=None)
+def get_messages(emoji, outfile, startdate, enddate, api_token):
+    if API_TOKEN is None and api_token is None:
+        print('Please store API_TOKEN in api_token.py')
+        sys.exit(1)
+
     if not emoji:
         raise ValueError('Please supply an emoji name to search by')
     print('Querying Slack api')
