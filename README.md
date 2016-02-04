@@ -39,7 +39,7 @@ Make script executable:
 
 ## Usage
 
-You will need a Slack API key. You can get this from the [Slack website](https://api.slack.com/web). The script expects the token to be in a file in the same directory, which will not be checked in to Github. To create it, run the following from the ~/emoji_search directory, subbing in your token and making sure to keep the quotes:
+You will need a Slack API key. You can get this from the [Slack website](https://api.slack.com/web). The script expects the token to be in a file in the same directory, which will not be checked in to GitHub. To create it, run the following from the ~/emoji_search directory, subbing in your token and making sure to keep the quotes:
 
     echo "API_TOKEN = '<MY-API-TOKEN>'" > api_token.py
 
